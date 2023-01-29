@@ -28,6 +28,13 @@ export default function Honk(props){
             <img src={props.honk.profilePic} className="other-users user-pic"></img>
             <div className="honk-display">
                 <h3 className="user-name">{props.honk.handle}</h3>
+                {props.honk.handle === '@Makushi' &&
+                    <i 
+                        className="fa-solid fa-trash"
+                        onClick={props.handleDelete()}
+                        data-delete={props.id}
+                    ></i>
+                }
                 <p>{props.honk.honkText}</p>
                 <div className="icons">
                     <span className="honk-replies">

@@ -10,6 +10,7 @@ export default function App() {
 
   // Render triggerer
   const [cliked, setClicked] = React.useState(0)
+  const userName = '@Makushi'
   
   // handleLike checks which like icon was clicked and update the corresponding honk.
   function handleLike(honkId){
@@ -51,7 +52,7 @@ export default function App() {
 
       honkData.unshift(
         {
-          handle: `@Makushi`,
+          handle: userName,
           profilePic: userPic,
           likes: 0,
           rehonks: 0,
@@ -59,7 +60,7 @@ export default function App() {
           replies: [],
           isLiked: false,
           isRehonked: false,
-          uuid: nanoid()  // nanoid generates a new random id
+          uuid: nanoid(),   // nanoid generates a new random id
         }
       )
 
@@ -75,14 +76,14 @@ export default function App() {
   function handleReply(honkId){
 
     const replyText = document.getElementById("text" + honkId.target.dataset.reply).value
-    
+
     // Prevents execution if the textarea is empty.
     if(replyText){
       honkData.forEach((honk)=>{
         if(honk.uuid === honkId.target.dataset.reply){
           honk.replies.push(
             {
-              handle:`@Makushi`,
+              handle: userName,
               profilePic: userPic,
               honkText:replyText
             }
@@ -95,8 +96,20 @@ export default function App() {
       setClicked(prevClicked => prevClicked + 1)
     }
     
-
   }
+
+ // handleDelete removes the clicked honk from the data 
+  function handleDelete(honkId){
+    const deletedHonk = honkId.target.dataset.delete
+    honkData.forEach((honk)=>{
+      if(honk.uuid === deletedHonk){
+        honkData.shift(honk)
+      }
+    })
+    // setClicked causes a re-render.
+    setClicked(prevClicked => prevClicked + 1)
+  }
+
 
 // honksElements generate <Honk/> components by iterating over honkData (an array of all honks)
   const honksElements = honkData.map((honk)=>{
@@ -110,6 +123,7 @@ export default function App() {
           handleRehonk={()=>handleRehonk}
           handleReplies={()=>handleReplies}
           handleReply={()=>handleReply}
+          handleDelete={()=>handleDelete}
         />
       )       
     })

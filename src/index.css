@@ -5,6 +5,7 @@ body {
   color: #111;
   font-family: 'Karla', sans-serif;
   position: relative;
+  transition: 1s;
 }
 
 main, header {
@@ -24,8 +25,9 @@ main {
 
 /* Header */
 header {
-  background-color: #e7f8ff ;
+  background: linear-gradient(260deg, #cfedfa 0%, rgba(255,255,255,1) 100%);
   align-items: center;
+  overflow: hidden;
 }
 
 h1 {
@@ -47,6 +49,19 @@ h1 {
   margin-right: 10px ;
 }
 
+.floe-icon {
+  transform: translateX(100%);
+  opacity: 0;
+  width: 30px;
+  margin-left: auto;
+  transition: 2s;
+}
+
+header:hover .floe-icon {
+  transform: translateX(-20%);
+  opacity: 1;
+}
+
 /* HONK INPUT - APP TOP SECTION */
 
 .create-honk {
@@ -61,12 +76,12 @@ h1 {
 }
 
 .user-input {
-    border: none;
+    border: 1px solid rgba(17, 17, 17, 0.103);
     resize: none;
     padding: 10px;
     margin: 0;
     height: 90px;
-    font-size: 25px;
+    font-size: 23px;
     transition: 1s;
     border-radius: 10px;
 }
@@ -109,6 +124,7 @@ h1 {
   padding: 20px 0;
   display: flex;
   border-top: 1px rgba(17, 17, 17, 0.329) solid;
+  position: relative;
 }
 
 .other-users {
@@ -136,7 +152,8 @@ h1 {
 .fa-comment-dots,
 .fa-heart,
 .fa-retweet,
-.fa-reply
+.fa-reply,
+.fa-trash
 {
   margin-right: 5px;
   color: rgb(153, 151, 151);
@@ -202,4 +219,17 @@ h1 {
   background-color: #19647E;
   color: whitesmoke;
   cursor: pointer;
+}
+
+/* Delete Honk */
+
+.fa-trash {
+  position: absolute;
+  right: 0;
+  top: 20px;
+}
+
+.fa-trash:hover {
+  color: #111;
+  transform: translateY(10%);
 }
