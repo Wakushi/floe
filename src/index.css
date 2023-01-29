@@ -33,6 +33,7 @@ h1 {
   color: #19647E;
 }
 
+
 .fa-igloo {
   color: #19647E;
   font-size: 22px;
@@ -42,6 +43,7 @@ h1 {
   display: block;
   border-radius: 50%;
   width: 50px;
+  margin-right: 10px ;
 }
 
 /* HONK INPUT - APP TOP SECTION */
@@ -97,7 +99,7 @@ textarea {
   margin-right: 12px;
 }
 
-.user-name {
+.user-name, .comment h4 {
   color: #24203898;
   font-size: 15px;
   margin: 0;
@@ -122,3 +124,27 @@ textarea {
   user-select: none;
 }
 
+/* Comment display */
+
+.comment {
+  border-top: 1px rgba(17, 17, 17, 0.329) solid;
+  padding: 20px 0;
+  width: 60%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+}
+
+.comment p{
+  font-size: 14px;
+  width: 100%;
+  margin: 0;
+}
+
+.hidden {
+  display: none;
+}
+
+.fa-comment-dots:hover {
+  color: #111;
+}

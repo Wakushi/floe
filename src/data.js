@@ -1,7 +1,15 @@
+import sarah from "./assets/sarah.png"
+import bear from "./assets/bear.png"
+import igloo from "./assets/igloo.png"
+import penguin from "./assets/penguin.png"
+import orca from "./assets/orca.png"
+import tomato from "./assets/tomato.png"
+import icey from "./assets/icey.png"
+
 export const honkData = [   
     {
         handle: `@NotABotSarah435`,
-        profilePic: `./assets/user.png`,
+        profilePic: sarah,
         likes: 581,
         rehonks: 4,
         honkText: `DM me right now if you want a share of my Bitcoin earnings ! 💰💰💰`,
@@ -12,19 +20,19 @@ export const honkData = [
     },    
     {
         handle: `@MrBear12 ✅`,
-        profilePic: `assets/user.png`,
+        profilePic: bear,
         likes: 82,
         rehonks: 43,
         honkText: `GM, what a sunny day ! Don't you think it's getting hotter 🔥 ? `,
         replies: [
                   {
                 handle: `@Penguin67 ✅`,
-                profilePic: `assets/user.png`,
+                profilePic: penguin,
                 honkText: `Yes, what a blessing! 😎`,
             },
                   {
                 handle: `@Orcastic3 ✅`,
-                profilePic: `assets/user.png`,
+                profilePic: orca,
                 honkText: `There you are @Penguin67 ! 🤤`,
             },
         ],
@@ -34,19 +42,19 @@ export const honkData = [
     },
         {
         handle: `@Igloox`,
-        profilePic: `assets/user.png`,
+        profilePic: igloo,
         likes: 250,
         rehonks: 12,
         honkText: `Please visit our website to grab your free 10% coupon !`,
         replies: [
             {
                 handle: `@Tom8to`,
-                profilePic: `assets/user.png`,
+                profilePic: tomato,
                 honkText: `Be careful guys, that's a scam !`,
             },
             {
                 handle: `@Icey23`,
-                profilePic: `assets/user.png`,
+                profilePic: icey,
                 honkText: `I love Igloox ! ❤️`,
             },
         ],

@@ -35,23 +35,21 @@ export default function App() {
       setClicked(prevClicked => prevClicked + 1)
   }
 
+  function handleComments(honkId){
+    document.getElementById(honkId.target.dataset.comment).classList.toggle('hidden')
+  }
+
 // honksElements generate <Honk/> components by iterating over honkData (an array of all honks)
   const honksElements = honkData.map((honk)=>{
       return ( 
         <Honk
           id={honk.uuid}
           key={honk.uuid}
-          handle={honk.handle}
-          profilePic={honk.profilePic}
-          likes={honk.likes}
-          rehonks={honk.rehonks}
-          honkText={honk.honkText}
-          replies={honk.replies}
-          isLiked={honk.isLiked}
-          isRehonked={honk.isRehonked}
+          honk={honk}
           uuid={honk.uuid}
           handleLike={()=>handleLike}
           handleRehonk={()=>handleRehonk}
+          handleComments={()=>handleComments}
         />
       )       
     })
