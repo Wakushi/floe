@@ -71,7 +71,8 @@ h1 {
     border-radius: 10px;
 }
 
-.user-input:hover {
+.user-input:hover,
+.user-input:focus {
   border-radius: 20px;
   box-shadow: inset 1px 1px 5px #19647E;
 }
@@ -91,7 +92,8 @@ h1 {
   cursor: pointer;
 }
 
-.honk-btn:hover {
+.honk-btn:hover,
+.reply-btn:hover {
   box-shadow: 1px 1px 5px #19647E;
 }
 
@@ -167,43 +169,37 @@ h1 {
   color: #111;
 }
 
-/* Reply modal */
+/* Reply input */
 
-.reply-modal {
-  background-color: #19657e9a;
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
+.reply-input {
+  width: 60%;
   margin: auto;
-  padding: 10px 20px 20px;
-  width: 350px;
-  height: 200px;
-  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 }
 
-.reply-modal h5 {
-  color: whitesmoke;
-  font-size: 20px;
-  margin: 0;
-}
-
-.user-reply {
-  border: none;
+.reply-area {
+  border: 1px solid rgba(17, 17, 17, 0.199);
   resize: none;
-  background-color: rgba(255, 255, 255, 0.712);
-  padding: 17px;
+  padding: 10px;
   margin: 0;
-  height: 120px;
-  width: 90%;
-  font-size: 20px;
+  height: 40px;
+  font-size: 15px;
   transition: 1s;
   border-radius: 10px;
 }
 
-.reply-modal .fa-xmark:hover {
-  filter: invert(1);
+.reply-btn {
+  align-self: flex-end;
+  font-family: 'Karla', sans-serif;
+  font-weight: 700;
+  padding: 8px 10px;
+  font-size: 12px;
+  margin : 5px 0 10px 0;
+  border-radius: 40px;
+  border: none;
+  background-color: #19647E;
+  color: whitesmoke;
+  cursor: pointer;
 }
-
-

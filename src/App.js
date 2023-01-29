@@ -5,7 +5,6 @@ import Honk from "./components/Honk";
 import { honkData } from "./data"
 import userPic from "./assets/user.png"
 import { nanoid } from "nanoid";
-import ReplyModal from "./components/ReplyModal"
 
 export default function App() {
 
@@ -40,7 +39,7 @@ export default function App() {
 
   // handleReplies toggles the 'hidden' class to display/hide the replies of a honk
   function handleReplies(honkId){
-    document.getElementById(honkId.target.dataset.reply).classList.toggle('hidden')
+    document.getElementById(honkId.target.dataset.replies).classList.toggle('hidden')
   }
 
 
@@ -72,9 +71,31 @@ export default function App() {
     
   }
 
-
+// handleReply seeks the textarea whose id matches the button's dataset and adds a reply to the replies array of any given Honk.
   function handleReply(honkId){
-    console.log(honkId.target.dataset.reply)
+
+    const replyText = document.getElementById("text" + honkId.target.dataset.reply).value
+    
+    // Prevents execution if the textarea is empty.
+    if(replyText){
+      honkData.forEach((honk)=>{
+        if(honk.uuid === honkId.target.dataset.reply){
+          honk.replies.push(
+            {
+              handle:`@Makushi`,
+              profilePic: userPic,
+              honkText:replyText
+            }
+          )
+        }
+      })
+  
+      document.getElementById("text" + honkId.target.dataset.reply).value = ''
+      // setClicked causes a re-render.
+      setClicked(prevClicked => prevClicked + 1)
+    }
+    
+
   }
 
 // honksElements generate <Honk/> components by iterating over honkData (an array of all honks)
@@ -96,7 +117,6 @@ export default function App() {
 
   return (
     <>
-    <ReplyModal />
     <Header/>
     <main> 
      <HonkInput

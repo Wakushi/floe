@@ -33,7 +33,7 @@ export default function Honk(props){
                     <span className="honk-replies">
                         <i 
                         onClick={props.handleReplies()}
-                        data-reply={props.id} 
+                        data-replies={props.id} 
                         className="fa-regular fa-comment-dots"
                         ></i>
                         {props.honk.replies.length}
@@ -55,15 +55,22 @@ export default function Honk(props){
                         className="fa-solid fa-retweet"></i>
                         {props.honk.rehonks}
                     </span>
-                    <i
-                    onClick={props.handleReply()} 
-                    data-reply={props.id} 
-                    className="fa-solid fa-reply"
-                    ></i>
                 </div>
             </div>
         </div>
         <div className="hidden" id={props.uuid}>
+            <span className="reply-input">
+                <textarea
+                    id={'text' + props.id}
+                    className="reply-area"
+                    placeholder="Answer something..."
+                ></textarea>
+                <button 
+                    data-reply={props.id} 
+                    onClick={props.handleReply()} 
+                    className="reply-btn"
+                >Reply</button>
+            </span>   
             {replyElements}
         </div>
         
