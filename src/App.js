@@ -4,7 +4,7 @@ import HonkInput from "./components/HonkInput";
 import Honk from "./components/Honk";
 import { honkData } from "./data"
 import userPic from "./assets/user.png"
-import { v4 as uuidv4 } from 'https://jspm.dev/uuid';
+import { nanoid } from "nanoid";
 import ReplyModal from "./components/ReplyModal"
 
 export default function App() {
@@ -60,7 +60,7 @@ export default function App() {
           replies: [],
           isLiked: false,
           isRehonked: false,
-          uuid: uuidv4()  // uuidv4 generates a new random uuid
+          uuid: nanoid()  // nanoid generates a new random id
         }
       )
 
