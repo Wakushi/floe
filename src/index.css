@@ -4,6 +4,7 @@ body {
   background-color: #242038;
   color: #111;
   font-family: 'Karla', sans-serif;
+  position: relative;
 }
 
 main, header {
@@ -59,7 +60,7 @@ h1 {
   margin-right: 10px;
 }
 
-textarea {
+.user-input {
     border: none;
     resize: none;
     padding: 10px;
@@ -70,7 +71,7 @@ textarea {
     border-radius: 10px;
 }
 
-textarea:hover {
+.user-input:hover {
   border-radius: 20px;
   box-shadow: inset 1px 1px 5px #19647E;
 }
@@ -132,7 +133,9 @@ textarea:hover {
 
 .fa-comment-dots,
 .fa-heart,
-.fa-retweet{
+.fa-retweet,
+.fa-reply
+{
   margin-right: 5px;
   color: rgb(153, 151, 151);
   cursor: pointer;
@@ -163,3 +166,44 @@ textarea:hover {
 .fa-comment-dots:hover {
   color: #111;
 }
+
+/* Reply modal */
+
+.reply-modal {
+  background-color: #19657e9a;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  padding: 10px 20px 20px;
+  width: 350px;
+  height: 200px;
+  border-radius: 20px;
+}
+
+.reply-modal h5 {
+  color: whitesmoke;
+  font-size: 20px;
+  margin: 0;
+}
+
+.user-reply {
+  border: none;
+  resize: none;
+  background-color: rgba(255, 255, 255, 0.712);
+  padding: 17px;
+  margin: 0;
+  height: 120px;
+  width: 90%;
+  font-size: 20px;
+  transition: 1s;
+  border-radius: 10px;
+}
+
+.reply-modal .fa-xmark:hover {
+  filter: invert(1);
+}
+
+

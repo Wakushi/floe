@@ -5,6 +5,7 @@ import Honk from "./components/Honk";
 import { honkData } from "./data"
 import userPic from "./assets/user.png"
 import { v4 as uuidv4 } from 'https://jspm.dev/uuid';
+import ReplyModal from "./components/ReplyModal"
 
 export default function App() {
 
@@ -71,6 +72,11 @@ export default function App() {
     
   }
 
+
+  function handleReply(honkId){
+    console.log(honkId.target.dataset.reply)
+  }
+
 // honksElements generate <Honk/> components by iterating over honkData (an array of all honks)
   const honksElements = honkData.map((honk)=>{
       return ( 
@@ -82,6 +88,7 @@ export default function App() {
           handleLike={()=>handleLike}
           handleRehonk={()=>handleRehonk}
           handleReplies={()=>handleReplies}
+          handleReply={()=>handleReply}
         />
       )       
     })
@@ -89,6 +96,7 @@ export default function App() {
 
   return (
     <>
+    <ReplyModal />
     <Header/>
     <main> 
      <HonkInput

@@ -55,6 +55,11 @@ export default function Honk(props){
                         className="fa-solid fa-retweet"></i>
                         {props.honk.rehonks}
                     </span>
+                    <i
+                    onClick={props.handleReply()} 
+                    data-reply={props.id} 
+                    className="fa-solid fa-reply"
+                    ></i>
                 </div>
             </div>
         </div>
