@@ -5,6 +5,7 @@ import penguin from "./assets/penguin.png"
 import orca from "./assets/orca.png"
 import tomato from "./assets/tomato.png"
 import icey from "./assets/icey.png"
+import userPic from "./assets/user.png"
 
 export const honkData = [   
     {

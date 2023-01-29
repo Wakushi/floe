@@ -90,7 +90,6 @@ textarea {
   width: 90%;
   padding: 20px 0;
   display: flex;
-  justify-content: center;
   border-top: 1px rgba(17, 17, 17, 0.329) solid;
 }
 
@@ -99,7 +98,7 @@ textarea {
   margin-right: 12px;
 }
 
-.user-name, .comment h4 {
+.user-name, .reply h4 {
   color: #24203898;
   font-size: 15px;
   margin: 0;
@@ -107,6 +106,7 @@ textarea {
 
 .honk-display p {
   width: 90%;
+  margin: 10px 0 12px 0;
 }
 
 .honk-replies,
@@ -124,9 +124,9 @@ textarea {
   user-select: none;
 }
 
-/* Comment display */
+/* Replies display */
 
-.comment {
+.reply {
   border-top: 1px rgba(17, 17, 17, 0.329) solid;
   padding: 20px 0;
   width: 60%;
@@ -135,7 +135,7 @@ textarea {
   align-items: center;
 }
 
-.comment p{
+.reply p{
   font-size: 14px;
   width: 100%;
   margin: 0;

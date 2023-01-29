@@ -9,18 +9,17 @@ export default function Honk(props){
         color : props.honk.isRehonked ? "green" : ""
     }
 
-    const commentElements = props.honk.replies.map((reply)=>{
+    const replyElements = props.honk.replies.map((reply)=>{
         return (
-            <div className="comment">
+            <div className="reply">
                 <img className="user-pic" src={reply.profilePic}></img>
-                <span className="comment-info">
+                <span className="reply-info">
                     <h4>{reply.handle}</h4>
                     <p>{reply.honkText}</p>
                 </span>
             </div>
         )
     })
-
 
 
     return(
@@ -33,8 +32,8 @@ export default function Honk(props){
                 <div className="icons">
                     <span className="honk-replies">
                         <i 
-                        onClick={props.handleComments()}
-                        data-comment={props.id} 
+                        onClick={props.handleReplies()}
+                        data-reply={props.id} 
                         className="fa-regular fa-comment-dots"
                         ></i>
                         {props.honk.replies.length}
@@ -60,7 +59,7 @@ export default function Honk(props){
             </div>
         </div>
         <div className="hidden" id={props.uuid}>
-            {commentElements}
+            {replyElements}
         </div>
         
         </>
