@@ -63,10 +63,16 @@ textarea {
     border: none;
     resize: none;
     padding: 10px;
-    margin: 0 0 20px 0;
-    height: 60px;
+    margin: 0;
+    height: 90px;
     font-size: 25px;
-    
+    transition: 1s;
+    border-radius: 10px;
+}
+
+textarea:hover {
+  border-radius: 20px;
+  box-shadow: inset 1px 1px 5px #19647E;
 }
 
 .honk-btn {
@@ -81,6 +87,15 @@ textarea {
   border: none;
   background-color: #19647E;
   color: whitesmoke;
+  cursor: pointer;
+}
+
+.honk-btn:hover {
+  box-shadow: 1px 1px 5px #19647E;
+}
+
+.honk-btn:active {
+  box-shadow: inset 1px 1px 5px black;
 }
 
 /* Honks design */

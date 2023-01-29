@@ -71,11 +71,6 @@ export default function App() {
     
   }
 
-
-
-
-
-
 // honksElements generate <Honk/> components by iterating over honkData (an array of all honks)
   const honksElements = honkData.map((honk)=>{
       return ( 
