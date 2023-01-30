@@ -4,7 +4,6 @@ body {
   background-color: #fdfdfd;
   color: #111;
   font-family: 'Karla', sans-serif;
-  position: relative;
   transition: 1s;
 }
 
@@ -17,7 +16,6 @@ main {
   max-width: 400px;
   background-color: #fdfdfd ;
   flex-direction: column;
-  align-items: center;
 }
 
 /* Header */
