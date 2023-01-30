@@ -22,7 +22,6 @@ main {
 
 /* Header */
 header {
-  width: 100%;
   background: linear-gradient(260deg, #cfedfa 0%, rgba(255,255,255,1) 100%);
   align-items: center;
   overflow: hidden;
@@ -235,11 +234,16 @@ header:hover .floe-icon {
   transform: translateY(10%);
 }
 
-@media screen and (max-width:350px){
+@media screen and (max-width:360px){
 
   .honk-replies,
   .honk-likes,
   .honk-rehonks {
   margin-right: 1em;
 }
+
+.user-input {
+  width: 60%;
+}
+
 }
