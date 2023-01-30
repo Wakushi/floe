@@ -3,8 +3,10 @@ import Header from "./components/Header"
 import HonkInput from "./components/HonkInput";
 import Honk from "./components/Honk";
 import { honkData } from "./data"
-import userPic from "./assets/user.png"
 import { nanoid } from "nanoid";
+
+import userPic from "./assets/user.png"
+import orca from "./assets/orca.png"
 
 export default function App() {
 
@@ -65,9 +67,10 @@ export default function App() {
       )
 
       document.getElementById('honkText').value = ''
-
+      
       // setClicked causes a re-render.
       setClicked(prevClicked => prevClicked + 1)
+
     }
     
   }
@@ -98,17 +101,50 @@ export default function App() {
     
   }
 
+
  // handleDelete removes the clicked honk from the data 
   function handleDelete(honkId){
-    const deletedHonk = honkId.target.dataset.delete
-    honkData.forEach((honk)=>{
-      if(honk.uuid === deletedHonk){
-        honkData.shift(honk)
+    const deletedHonkId = honkId.target.dataset.delete
+    honkData.filter(function(val, index, arr){
+      if(val.uuid === deletedHonkId){
+        arr.splice(index,1)
+        return true
       }
+      return false
     })
+    
     // setClicked causes a re-render.
     setClicked(prevClicked => prevClicked + 1)
   }
+
+
+
+  // Script test function 
+
+  React.useEffect(()=>{
+    setTimeout(()=>{
+      scriptHonk()
+  },15000)
+  },[])
+  
+
+  function scriptHonk(){
+    honkData.unshift(
+      {
+        handle: `@Orcastic3 ✅`,
+        profilePic: orca,
+        likes: 0,
+        rehonks: 0,
+        honkText: `I need 5 more penguin followers to reach 10k ! 😍 `,
+        replies: [],
+        isLiked: false,
+        isRehonked: false,
+        uuid: '4b161eee-c0f5-4545-9c4b-8566862',   // nanoid generates a new random id
+      }
+    )
+  }
+  
+
 
 
 // honksElements generate <Honk/> components by iterating over honkData (an array of all honks)
