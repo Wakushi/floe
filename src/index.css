@@ -1,33 +1,34 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: #242038;
+  background-color: #fdfdfd;
   color: #111;
   font-family: 'Karla', sans-serif;
   position: relative;
   transition: 1s;
 }
 
-main, header {
+main, header{
   display: flex;
- 
   margin: auto;
-  width: 400px;
-  padding: 20px;
-  box-shadow: 2px 50px 50px black;
 }
 
 main {
+  max-width: 400px;
   background-color: #fdfdfd ;
   flex-direction: column;
   justify-content: center;
+  padding: 0px 10px;
 }
 
 /* Header */
 header {
+  width: 100%;
   background: linear-gradient(260deg, #cfedfa 0%, rgba(255,255,255,1) 100%);
   align-items: center;
   overflow: hidden;
+  margin-bottom: 1em;
+  padding: 20px;
 }
 
 h1 {
@@ -58,7 +59,7 @@ h1 {
 }
 
 header:hover .floe-icon {
-  transform: translateX(-20%);
+  transform: translateX(-200%);
   opacity: 1;
 }
 
@@ -93,10 +94,10 @@ header:hover .floe-icon {
 }
 
 .honk-btn {
-  margin: auto;
+  align-self: center;
   font-family: 'Karla', sans-serif;
   font-weight: 700;
-  width: 90%;
+  width: 80%;
   padding: 10px 20px;
   font-size: 26px;
   margin-bottom: 30px;
@@ -232,4 +233,13 @@ header:hover .floe-icon {
 .fa-trash:hover {
   color: #111;
   transform: translateY(10%);
+}
+
+@media screen and (max-width:350px){
+
+  .honk-replies,
+  .honk-likes,
+  .honk-rehonks {
+  margin-right: 1em;
+}
 }

@@ -117,8 +117,6 @@ export default function App() {
     setClicked(prevClicked => prevClicked + 1)
   }
 
-
-
   // Script test function 
 
   React.useEffect(()=>{
