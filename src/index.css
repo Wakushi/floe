@@ -17,8 +17,7 @@ main {
   max-width: 400px;
   background-color: #fdfdfd ;
   flex-direction: column;
-  justify-content: center;
-  padding: 0px 10px;
+  align-items: center;
 }
 
 /* Header */
@@ -74,6 +73,7 @@ header:hover .floe-icon {
 .main-user {
   margin-bottom: auto;
   margin-right: 10px;
+  margin-left: 10px;
 }
 
 .user-input {
